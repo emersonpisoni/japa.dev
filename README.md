@@ -9,6 +9,13 @@
 
 ## Trade-offs
 
+### Pros
+
+- For being plugin-first design, it has very small bundle size
+    - Japa installation size is 11 times smaller than Vitest and 7 times smaller than Jest.
+
+### Cons
+
 - Less ecosystem than Jest or Vitest
 - Less focused in frontend or full-stack applications
 
