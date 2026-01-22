@@ -7,6 +7,10 @@
 - Plugin-first design
 - Native support to Typescript
 
+## Why Use japa.dev?
+
+japa.dev is a modern testing framework designed for backend-focused Node.js applications, with first-class support for TypeScript and deep integration with AdonisJS. It prioritizes clarity, explicitness, and maintainability over large, monolithic feature sets.
+
 ## Trade-offs
 
 | **Pros**                                                                                                                      | **Cons**                                                                                                                   |
