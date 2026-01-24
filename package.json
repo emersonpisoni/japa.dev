@@ -4,14 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node --enable-source-maps bin/test.ts"
+    "test:japa": "node --loader=ts-node/esm bin/test.ts",
+    "test:jest": "jest",
+    "test:vitest": "vitest run",
+    "test": "node --experimental-transform-types --enable-source-maps bin/test.ts"
   },
   "version": "0.0.0",
   "devDependencies": {
     "@japa/browser-client": "^2.3.0",
     "@japa/expect": "^3.0.7",
     "@japa/runner": "^5.3.0",
+    "@types/jest": "^30.0.0",
+    "@types/sinon": "^21.0.0",
+    "@types/supertest": "^6.0.3",
     "playwright": "^1.57.0",
+    "sinon": "^21.0.1",
+    "supertest": "^7.2.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@japa/expect-type": "^2.0.4",
+    "jest": "^30.2.0"
   }
 }
