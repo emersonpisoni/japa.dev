@@ -1,5 +1,7 @@
 # japa.dev
 
+A simple yet powerful testing framework for Node.js
+
 ## Testing framework for NodeJS applications.
 
 - Usually used with AdonisJS
