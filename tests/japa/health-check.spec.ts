@@ -18,15 +18,30 @@ function request(url: string) {
   }))
 }
 
-test('GET /health returns 200 and { ok: true }', async () => {
-  const server = createServer()
-  const { port } = await listen(server)
+test.group('Integration test', (group) => {
+  test('GET /health returns 200 and { ok: true }', async () => {
+    const server = createServer()
+    const { port } = await listen(server)
 
-  try {
-    const res = await request(`http://127.0.0.1:${port}/health`)
-    assert.equal(res.status, 200)
-    assert.deepEqual(res.json, { ok: true })
-  } finally {
-    server.close()
-  }
+    try {
+      const res = await request(`http://127.0.0.1:${port}/health`)
+      assert.equal(res.status, 200)
+      assert.deepEqual(res.json, { ok: true })
+    } finally {
+      server.close()
+    }
+  })
+
+  test('GET /unknown returns 404 and { error: "Not found" }', async () => {
+    const server = createServer()
+    const { port } = await listen(server)
+
+    try {
+      const res = await request(`http://127.0.0.1:${port}/unknown`)
+      assert.equal(res.status, 404)
+      assert.deepEqual(res.json, { error: 'Not found' })
+    } finally {
+      server.close()
+    }
+  })
 })
