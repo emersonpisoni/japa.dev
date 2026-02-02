@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "module": "NodeNext",
+    "types": ["./types/japa.d.ts"]
   },
   "ts-node": {
     "transpileOnly": true
